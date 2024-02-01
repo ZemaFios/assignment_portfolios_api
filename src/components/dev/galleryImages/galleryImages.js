@@ -37,8 +37,6 @@ const GalleryImages = ({ gallery = 'umbra' }) => {
 
   return (
     <div className={styles.slider}>
-      <button onClick={() => setGalleryName('umbra')}>UMBRA</button>
-      <button onClick={() => setGalleryName('obscura')}>OBSCURA</button>
       <h2>Gallery Images for {galleryName}</h2>
       <swiper-container slides-per-view="1" keyboard={true} rewind={true}>
         {data.map((item, index) => {
