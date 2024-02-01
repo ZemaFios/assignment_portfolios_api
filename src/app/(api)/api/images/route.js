@@ -1,5 +1,6 @@
 import { fetchImagesQuery, fetchImagesByAuthorName, fetchImagesForGallery } from "@/lib/data.service";
 import { NextResponse } from "next/server"
+import { corsOptions } from '@/lib/corsOptions';
 
 export async function GET(request) {
 
@@ -13,7 +14,7 @@ export async function GET(request) {
     if(author) {
 
         let result = await fetchImagesByAuthorName(author)
-        return NextResponse.json(result)
+        return NextResponse.json(result, corsOptions('GET'));
 
     } if(gallery) {
 
